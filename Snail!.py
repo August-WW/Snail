@@ -1,13 +1,12 @@
 import curses
 
-# Define the snail
 snail = "🐌"
 
 def main(stdscr):
-    # Clear screen
+
     stdscr.clear()
     
-    # Initialize starting position
+
     y, x = 10, 40
     stdscr.addstr(y, x, snail)
     stdscr.refresh()
@@ -15,10 +14,10 @@ def main(stdscr):
     while True:
         key = stdscr.getch()
         
-        # Clear previous position
+
         stdscr.clear()
         
-        # Update position based on the key pressed
+
         if key == curses.KEY_UP:
             y = max(0, y - 1)
         elif key == curses.KEY_DOWN:
@@ -30,7 +29,7 @@ def main(stdscr):
         elif key == ord('q'):  # Quit the program
             break
         
-        # Draw the snail at the new position
+
         stdscr.addstr(y, x, snail)
         stdscr.refresh()
 
